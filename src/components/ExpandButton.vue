@@ -55,6 +55,11 @@ export default {};
 	align-items: center;
 	gap: 1.3rem;
 	cursor: pointer;
+	transition: 0.2s background-color ease-in-out;
+	&:hover {
+		background-color: rgb(9, 41, 90);
+		transition: 0.2s background-color ease-in-out;
+	}
 }
 span {
 	color: white;

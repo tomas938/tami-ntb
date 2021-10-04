@@ -6,6 +6,7 @@
 			:heading="card.heading"
 			:description="card.description"
 			:img="card.img"
+			:folder="card.folder"
 		>
 			{{ card }}
 		</BigCard>

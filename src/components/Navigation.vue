@@ -270,6 +270,10 @@ export default {
 			padding: 1rem 3rem;
 			background: var(--dark-blue);
 			cursor: pointer;
+			&:hover {
+				background-color: var(--light-blue);
+				transition: background-color 0.2s ease-in-out;
+			}
 			a {
 				color: white;
 				font-weight: bold;

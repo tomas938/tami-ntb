@@ -66,11 +66,18 @@
 		<section class="small-carousel container">
 			<vueper-slides
 				class="no-shadow"
-				:visible-slides="3"
+				:visible-slides="1"
 				:slide-ratio="1 / 4"
 				:gap="3"
+				:bullets="false"
+				:initSlide="2"
 			>
-				<vueper-slide v-for="i in 9" :key="i" :title="i.toString()" />
+				<vueper-slide
+					v-for="(slide, index) in slides"
+					:key="index"
+					:title="slide.title"
+					:image="slide.image"
+				/>
 			</vueper-slides>
 		</section>
 		<section class="about">
@@ -168,52 +175,88 @@ export default {
 				{
 					img: "img-1",
 					heading: "Intolerancia nie je prekážkou",
+					folder: "News",
+
 					description:
 						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore cupiditate veniam rem ducimus obcaecati nostrum accusamus ad soluta repellendus illo!",
 				},
 				{
 					img: "img-2",
 					heading: "Intolerancia nie je prekážkou",
+					folder: "News",
+
 					description:
 						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore cupiditate veniam rem ducimus obcaecati nostrum accusamus ad soluta repellendus illo!",
 				},
 				{
 					img: "img-3",
 					heading: "Intolerancia nie je prekážkou",
+					folder: "News",
 					description:
 						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore cupiditate veniam rem ducimus obcaecati nostrum accusamus ad soluta repellendus illo!",
 				},
 			],
 			recipesContent: [
 				{
-					img: "img-1",
+					img: "recipe-1",
 					heading: "zemiakové pečivo s plesňovým syrom",
+					folder: "recipes",
 					description:
 						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore cupiditate veniam rem ducimus obcaecati nostrum accusamus ad soluta repellendus illo!",
 				},
 				{
-					img: "img-1",
+					img: "recipe-2",
 					heading: "kuracie rezne s plesňovým syrom",
+					folder: "recipes",
 					description:
 						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore cupiditate veniam rem ducimus obcaecati nostrum accusamus ad soluta repellendus illo!",
 				},
 				{
-					img: "img-1",
+					img: "recipe-3",
 					heading: "tortičky s plesňového syra encíán",
+					folder: "recipes",
 					description:
 						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore cupiditate veniam rem ducimus obcaecati nostrum accusamus ad soluta repellendus illo!",
 				},
 			],
-			// slides: [
-			// 	{
-			// 		title: "Slide #1",
-			// 		content: "Slide content.",
-			// 	},
-			// 	{
-			// 		title: "Slide 2",
-			// 		content: "Slide content.",
-			// 	},
-			// ],
+			slides: [
+				{
+					title: "El Teide Volcano, Spain",
+					content: "Photo by Max Rive",
+					// You can also provide a URL for the image.
+					image: require("../assets/small-carousel/img-1.png"),
+				},
+				{
+					title: "El Teide Volcano, Spain",
+					content: "Photo by Max Rive",
+					// You can also provide a URL for the image.
+					image: require("../assets/small-carousel/img-2.png"),
+				},
+				{
+					title: "El Teide Volcano, Spain",
+					content: "Photo by Max Rive",
+					// You can also provide a URL for the image.
+					image: require("../assets/small-carousel/img-3.png"),
+				},
+				{
+					title: "El Teide Volcano, Spain",
+					content: "Photo by Max Rive",
+					// You can also provide a URL for the image.
+					image: require("../assets/small-carousel/img-4.png"),
+				},
+				{
+					title: "El Teide Volcano, Spain",
+					content: "Photo by Max Rive",
+					// You can also provide a URL for the image.
+					image: require("../assets/small-carousel/img-1.png"),
+				},
+				{
+					title: "El Teide Volcano, Spain",
+					content: "Photo by Max Rive",
+					// You can also provide a URL for the image.
+					image: require("../assets/small-carousel/img-2.png"),
+				},
+			],
 		};
 	},
 	methods: {},
@@ -227,8 +270,6 @@ export default {
 .vueperslide {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
-
-// documentation link.
 
 .news {
 	background-color: var(--news-bg);
@@ -285,6 +326,12 @@ export default {
 		background-color: var(--danger);
 		font-family: var(--myriad-pro);
 		text-transform: uppercase;
+		white-space: nowrap;
+		transition: 0.2s background-color ease-in-out;
+		&:hover {
+			background-color: rgb(233, 60, 74);
+			transition: 0.2s background-color ease-in-out;
+		}
 		img {
 			width: 2rem;
 			height: 1.4rem;
@@ -382,5 +429,31 @@ export default {
 }
 .small-carousel {
 	padding: 8rem;
+}
+.vueperslide {
+	background-color: var(--news-bg);
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	&::before {
+		position: absolute;
+		content: "";
+		bottom: 0%;
+		left: 0;
+		width: 100%;
+		height: 0.3rem;
+		background: var(--danger);
+	}
+	&:hover {
+		background-color: white;
+	}
+	&__title {
+		font-size: 1rem;
+		position: absolute;
+		bottom: -5%;
+		color: var(--dark-blue);
+		font-weight: bold;
+		margin-bottom: 3rem;
+	}
 }
 </style>
