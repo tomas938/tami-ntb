@@ -5,11 +5,31 @@
 			<h1>Mliečna <br />chuť Tatier</h1>
 			<span>v novom dizajne</span>
 		</div>
+		<div class="pagination">
+			<span
+				@click="goToSlide(index)"
+				v-for="(slide, index) in slides"
+				:key="index"
+				:class="{ active: index + 1 === currentSlide }"
+			></span>
+		</div>
 	</div>
 </template>
 
 <script>
-export default {};
+export default {
+	data() {
+		return {
+			currentSlide: 1,
+			slides: ["a", "b", "b", "d"],
+		};
+	},
+	methods: {
+		goToSlide(index) {
+			this.currentSlide = index + 1;
+		},
+	},
+};
 </script>
 
 <style lang="scss" scoped>
@@ -56,6 +76,42 @@ export default {};
 	}
 	img {
 		width: 100%;
+	}
+	.pagination {
+		position: absolute;
+		bottom: 7rem;
+		@media only screen and (max-width: 1000px) {
+			bottom: 4rem;
+		}
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 1.6rem;
+		justify-content: center;
+		align-items: center;
+		span {
+			cursor: pointer;
+			width: 0.9rem;
+			height: 0.9rem;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 2px solid var(--dark-blue);
+		}
+		.active {
+			background-color: var(--dark-blue);
+			transform: scale(0.7);
+			&::before {
+				content: "";
+				position: absolute;
+				top: -15px;
+				right: -15px;
+				bottom: -15px;
+				left: -15px;
+				border-radius: 50%;
+				border: 4px solid #cfd8ea;
+			}
+		}
 	}
 }
 </style>

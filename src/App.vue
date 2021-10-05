@@ -9,6 +9,7 @@
 //** */ Should be fixed i coudl't find victor script font for free :/ **//
 
 @import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -35,7 +36,7 @@ li {
 	--section-p-color: #afb5c2;
 	--catalog-span: #aab8d9;
 	--recipes-text-color: #9caed8;
-
+	--mobile-hover-color: #add8e6;
 	// Fonts //
 
 	--sofia: "Sofia Pro", sans-serif;
@@ -56,8 +57,8 @@ html {
 }
 body {
 	font-size: 1.6rem;
-	overflow-x: hidden;
 	font-family: var(--sofia);
+	overflow-x: hidden;
 }
 .noscroll {
 	overflow: hidden;

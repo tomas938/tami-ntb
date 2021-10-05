@@ -1,119 +1,135 @@
 <template>
-	<div>
-		<Navigation></Navigation>
-		<Hero></Hero>
-		<section class="news">
-			<img
-				v-if="width > 800"
-				class="milk-bg"
-				src="../assets/News/milk.png"
-				alt="milk-background"
+	<Navigation></Navigation>
+	<hero></hero>
+	<section class="news">
+		<img
+			v-if="width > 800"
+			class="milk-bg"
+			src="../assets/News/milk.png"
+			alt="milk-background"
+		/>
+		<SectionDescription>
+			<template v-slot:title>
+				Sledujte naše
+			</template>
+			<template v-slot:BigTitle>
+				Tami aktuality
+			</template>
+		</SectionDescription>
+		<div class="container">
+			<BigCards :data="actualityContent"></BigCards>
+		</div>
+		<div class="actuality">
+			<ExpandButton>Všetky recepty</ExpandButton>
+		</div>
+	</section>
+	<section class="offers">
+		<SectionDescription>
+			<template v-slot:title>
+				školské mlieko
+			</template>
+			<template v-slot:BigTitle>
+				Tatranskej mliekarne
+			</template>
+			<template v-slot:description>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste odit!
+				Nam consequuntur eveniet fugiat incidunt facere ea expedita mollitia ad
+				laudantium magni vero porro iure perferendis ratione eum recusandae
+				aliquam facilis ipsum, delectus consectetur in autem alias. Ab iste
+				doloremque ullam illo voluptatibus dolorum rem sequi temporibus ex
+				provident!
+			</template>
+		</SectionDescription>
+		<div class="container">
+			<OfferItems></OfferItems>
+		</div>
+	</section>
+	<section class="catalog">
+		<div class="catalog__content">
+			<span>prelistujte si </span>
+			<h2>Katalóg produktov</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste odit!
+				Nam consequuntur eveniet fugiat incidunt facere ea expedita mollitia ad
+				laudantium magni vero porro iure perferendis ratione eum recusandae
+				aliquam facilis ipsum, delectus consectetur in autem alias.
+			</p>
+		</div>
+		<div class="catalog__button">
+			<img src="../assets/catalog-icon.png" alt="catalog-icon" />
+			<p>otvoriť Katalóg</p>
+			<img class="catalog-bg" src="../assets/catalog-bg2.png" alt="catalog" />
+			<img class="catalog-bg2" src="../assets/catalog-bg.png" alt="catalog" />
+		</div>
+	</section>
+	<section class="small-carousel container">
+		<SectionDescription>
+			<template v-slot:title>
+				kategórie
+			</template>
+			<template v-slot:BigTitle>
+				Našich produktov
+			</template>
+			<template v-slot:description>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste odit!
+				Nam consequuntur eveniet fugiat incidunt facere ea expedita mollitia ad
+				laudantium magni vero porro iure perferendis ratione eum recusandae
+				aliquam facilis ipsum, delectus consectetur in autem alias. Ab iste
+				doloremque ullam illo voluptatibus dolorum rem sequi temporibus ex
+				provident!
+			</template>
+		</SectionDescription>
+		<vueper-slides
+			:breakpoints="breakpoints"
+			class="no-shadow"
+			:visible-slides="3"
+			:slide-ratio="1 / 4"
+			:gap="3"
+			:bullets="false"
+			:initSlide="2"
+		>
+			<vueper-slide
+				v-for="(slide, index) in slides"
+				:key="index"
+				:title="slide.title"
+				:image="slide.image"
 			/>
-			<SectionDescription>
-				<template v-slot:title>
-					Sledujte naše
-				</template>
-				<template v-slot:BigTitle>
-					Tami aktuality
-				</template>
-			</SectionDescription>
-			<div class="container">
-				<BigCards :data="actualityContent"></BigCards>
-			</div>
-			<div class="actuality">
-				<ExpandButton>Všetky recepty</ExpandButton>
-			</div>
-		</section>
-		<section class="offers">
-			<SectionDescription>
-				<template v-slot:title>
-					školské mlieko
-				</template>
-				<template v-slot:BigTitle>
-					Tatranskej mliekarne
-				</template>
-				<template v-slot:description>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste
-					odit! Nam consequuntur eveniet fugiat incidunt facere ea expedita
-					mollitia ad laudantium magni vero porro iure perferendis ratione eum
-					recusandae aliquam facilis ipsum, delectus consectetur in autem alias.
-					Ab iste doloremque ullam illo voluptatibus dolorum rem sequi
-					temporibus ex provident!
-				</template>
-			</SectionDescription>
-			<div class="container">
-				<OfferItems></OfferItems>
-			</div>
-		</section>
-		<section class="catalog">
-			<div class="catalog__content">
-				<span>prelistujte si </span>
-				<h2>Katalóg produktov</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste
-					odit! Nam consequuntur eveniet fugiat incidunt facere ea expedita
-					mollitia ad laudantium magni vero porro iure perferendis ratione eum
-					recusandae aliquam facilis ipsum, delectus consectetur in autem alias.
-				</p>
-			</div>
-			<div class="catalog__button">
-				<img src="../assets/catalog-icon.png" alt="catalog-icon" />
-				<p>otvoriť Katalóg</p>
-				<img class="catalog-bg" src="../assets/catalog-bg2.png" alt="catalog" />
-				<img class="catalog-bg2" src="../assets/catalog-bg.png" alt="catalog" />
-			</div>
-		</section>
-		<section class="small-carousel container">
-			<vueper-slides
-				class="no-shadow"
-				:visible-slides="1"
-				:slide-ratio="1 / 4"
-				:gap="3"
-				:bullets="false"
-				:initSlide="2"
-			>
-				<vueper-slide
-					v-for="(slide, index) in slides"
-					:key="index"
-					:title="slide.title"
-					:image="slide.image"
-				/>
-			</vueper-slides>
-		</section>
-		<section class="about">
-			<div class="container">
-				<AboutItems :aboutConent="aboutConent"></AboutItems>
-			</div>
-		</section>
-		<section class="recipes">
-			<img
-				v-if="width > 800"
-				class="milk-bg"
-				src="../assets/News/milk.png"
-				alt="milk-background"
-			/>
-			<SectionDescription>
-				<template v-slot:title>
-					vyskúšajte
-				</template>
-				<template v-slot:BigTitle>
-					Recepty z našej kuchyne
-				</template>
-				<template v-slot:description>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste
-					odit! Nam consequuntur eveniet fugiat incidunt facere ea expedita
-					mollitia ad laudantium magni vero porro iure perferendis ratione eum
-					recusandae aliquam facilis ipsum, delectus consectetur in autem alias.
-					Ab iste doloremque ullam illo voluptatibus dolorum rem sequi
-					temporibus ex provident!
-				</template>
-			</SectionDescription>
-			<div class="container">
-				<BigCards :data="recipesContent"></BigCards>
-			</div>
-		</section>
-		<Footer></Footer>
-	</div>
+		</vueper-slides>
+		<Expand-button class="category">Všetky kategórie</Expand-button>
+	</section>
+	<section class="about">
+		<div class="container">
+			<AboutItems :aboutConent="aboutConent"></AboutItems>
+		</div>
+	</section>
+	<section class="recipes">
+		<img
+			v-if="width > 800"
+			class="milk-bg"
+			src="../assets/News/milk.png"
+			alt="milk-background"
+		/>
+		<SectionDescription>
+			<template v-slot:title>
+				vyskúšajte
+			</template>
+			<template v-slot:BigTitle>
+				Recepty z našej kuchyne
+			</template>
+			<template v-slot:description>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste odit!
+				Nam consequuntur eveniet fugiat incidunt facere ea expedita mollitia ad
+				laudantium magni vero porro iure perferendis ratione eum recusandae
+				aliquam facilis ipsum, delectus consectetur in autem alias. Ab iste
+				doloremque ullam illo voluptatibus dolorum rem sequi temporibus ex
+				provident!
+			</template>
+		</SectionDescription>
+		<div class="container">
+			<BigCards :data="recipesContent"></BigCards>
+		</div>
+	</section>
+	<Footer></Footer>
 </template>
 
 <script>
@@ -144,6 +160,16 @@ export default {
 	},
 	data() {
 		return {
+			breakpoints: {
+				900: {
+					visibleSlides: "2",
+					fixedHeight: "300px",
+				},
+				600: {
+					visibleSlides: "1",
+					fixedHeight: "300px",
+				},
+			},
 			width: null,
 			aboutConent: [
 				{
@@ -267,10 +293,6 @@ export default {
 };
 </script>
 <style lang="scss">
-.vueperslide {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-}
-
 .news {
 	background-color: var(--news-bg);
 	text-align: center;
@@ -429,12 +451,16 @@ export default {
 }
 .small-carousel {
 	padding: 8rem;
+	text-align: center;
+	@media only screen and (max-width: 600px) {
+		padding: 8rem 3rem;
+	}
 }
 .vueperslide {
 	background-color: var(--news-bg);
-	background-repeat: no-repeat;
-	background-position: center;
 	position: relative;
+	background-repeat: no-repeat;
+	background-size: auto;
 	&::before {
 		position: absolute;
 		content: "";
@@ -455,5 +481,9 @@ export default {
 		font-weight: bold;
 		margin-bottom: 3rem;
 	}
+}
+.category {
+	margin: auto;
+	margin-top: 6rem;
 }
 </style>

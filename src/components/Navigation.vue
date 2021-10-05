@@ -318,7 +318,7 @@ export default {
 	.mobile {
 		background-color: white;
 		&:nth-child(1) {
-			transform: translateY(0.6rem) rotate(45deg);
+			transform: translateY(0.5rem) rotate(45deg);
 		}
 		&:nth-child(2) {
 			opacity: 0;
@@ -349,6 +349,9 @@ export default {
 		display: block;
 		color: white;
 		font-size: 1.8rem;
+		&:hover {
+			color: var(--mobile-hover-color);
+		}
 	}
 }
 

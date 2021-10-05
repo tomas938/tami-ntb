@@ -203,7 +203,7 @@ export default {};
 }
 .rights {
 	border-top: 1px solid var(--footer-icon-bg);
-	padding: 5rem 1rem 25rem 1rem;
+	padding: 5rem 3rem 25rem 3rem;
 	grid-column: 2/3;
 	p {
 		width: 100%;
