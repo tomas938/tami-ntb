@@ -48,26 +48,27 @@ export default {
 	}
 	&__content {
 		position: absolute;
-		top: 55%;
+		top: 50%;
 		left: 15%;
 		transform: translateY(-50%);
+		@media only screen and (max-width: 1300px) {
+			top: 55%;
+			left: 10%;
+		}
+		@media only screen and (max-width: 500px) {
+			top: 50%;
+			left: 7%;
+		}
 	}
 	h1 {
+		line-height: 15rem;
 		font-size: 17rem;
 		font-family: var(--hero-heading);
 		color: white;
 		text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
-		@media only screen and (max-width: 1500px) {
-			font-size: 10rem;
-		}
-		@media only screen and (max-width: 800px) {
-			font-size: 7rem;
-		}
-		@media only screen and (max-width: 600px) {
-			font-size: 5rem;
-		}
-		@media only screen and (max-width: 400px) {
-			font-size: 4rem;
+		@media only screen and (max-width: 900px) {
+			font-size: 8rem;
+			line-height: 8rem;
 		}
 	}
 	span {
@@ -76,12 +77,6 @@ export default {
 		font-size: 4.8rem;
 		@media only screen and (max-width: 800px) {
 			font-size: 2.8rem;
-		}
-		@media only screen and (max-width: 600px) {
-			font-size: 1.8rem;
-		}
-		@media only screen and (max-width: 400px) {
-			font-size: 1.3rem;
 		}
 	}
 	img {
