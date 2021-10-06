@@ -88,6 +88,12 @@
 			:bullets="false"
 			:initSlide="2"
 		>
+			<template #arrow-left>
+				<i @click="prevSlide" class="fas fa-chevron-left fa-1x"></i>
+			</template>
+			<template #arrow-right>
+				<i @click="nextSlide" class="fas fa-chevron-right fa-1x"></i>
+			</template>
 			<vueper-slide
 				v-for="(slide, index) in slides"
 				:key="index"
@@ -491,10 +497,13 @@ export default {
 		margin-bottom: 3rem;
 	}
 }
-.vueperslides__arrow svg {
-	width: 2.7em;
-	background-color: white;
+.vueperslides__arrows {
+	color: black;
+}
+.fa-chevron-left:before,
+.fa-chevron-right:before {
+	padding: 3rem;
 	box-shadow: 5px 5px 15px 5px #cdcdcd;
-	fill: rgb(14, 13, 13);
+	background: #fcf7f7;
 }
 </style>

@@ -171,6 +171,11 @@ export default {};
 		.socials a {
 			padding: 1rem;
 			background-color: var(--footer-icon-bg);
+			transition: background-color 0.3s ease-in-out;
+			&:hover {
+				background-color: rgb(242, 255, 56);
+				transition: background-color 0.3s ease-in-out;
+			}
 		}
 		.socials svg {
 			height: 1.8rem;
