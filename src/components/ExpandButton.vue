@@ -1,6 +1,6 @@
 <template>
 	<div class="expand">
-		<img src="../assets/awesome.png" alt="" />
+		<img src="../assets/Home-page/awesome.png" alt="" />
 		<span><slot></slot></span>
 		<svg
 			version="1.1"

@@ -3,19 +3,11 @@
 </template>
 
 <style lang="scss">
-/** Poppins 
-*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-/** Poppins 
-*/
-/* should be sofia */
-// @import url("http://fonts.cdnfonts.com/css/sofia-pro");
+@import url("http://fonts.cdnfonts.com/css/sofia-pro");
 @import url("http://fonts.cdnfonts.com/css/myriad-pro");
-
 //** */ Should be fixed i coudl't find victor script font for free :/ **//
-
 @import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
-
+//** */ Should be fixed i coudl't find victor script font for free :/ **//
 * {
 	margin: 0;
 	padding: 0;
@@ -29,7 +21,6 @@ li {
 }
 :root {
 	// Colors //
-
 	--top-navigation-links: #5f6c8a;
 	--top-navigation-bg: #f6f6fb;
 	--top-navigation-detail: #e4e4ed;
@@ -44,12 +35,9 @@ li {
 	--recipes-text-color: #9caed8;
 	--mobile-hover-color: #add8e6;
 	// Fonts //
-
-	--sofia: "Poppins", sans-serif;
+	--sofia: "Sofia Pro", sans-serif;
 	--myriad-pro: "Myriad Pro", sans-serif;
-
 	//* CHANGE FONT FOR HERO HEADING *//
-
 	--hero-heading: "Ephesis", cursive;
 }
 

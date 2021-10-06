@@ -56,10 +56,18 @@
 			</p>
 		</div>
 		<div class="catalog__button">
-			<img src="../assets/catalog-icon.png" alt="catalog-icon" />
+			<img src="../assets/Home-page/catalog-icon.png" alt="catalog-icon" />
 			<p>otvoriť Katalóg</p>
-			<img class="catalog-bg" src="../assets/catalog-bg2.png" alt="catalog" />
-			<img class="catalog-bg2" src="../assets/catalog-bg.png" alt="catalog" />
+			<img
+				class="catalog-bg"
+				src="../assets/Home-page/catalog-bg2.png"
+				alt="catalog"
+			/>
+			<img
+				class="catalog-bg2"
+				src="../assets/Home-page/catalog-bg.png"
+				alt="catalog"
+			/>
 		</div>
 	</section>
 	<section class="small-carousel container">
@@ -281,7 +289,7 @@ export default {
 					image: require("../assets/small-carousel/img-3.png"),
 				},
 				{
-					title: "Cheese",
+					title: "syry",
 					image: require("../assets/small-carousel/img-4.png"),
 				},
 			],
@@ -342,7 +350,7 @@ export default {
 		cursor: pointer;
 		width: 26rem;
 		padding: 2rem 3rem;
-		letter-spacing: 0.15rem;
+		letter-spacing: 0.11rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;

@@ -2,7 +2,7 @@
 	<footer>
 		<div class="container">
 			<div class="adress">
-				<img src="../assets/logo.png" alt="logo" />
+				<img src="../assets/Home-page/logo.png" alt="logo" />
 				<span>tatranská mliekáreň a.s</span>
 				<span>nad traťou 26</span>
 				<span>060 01 Kežmarok</span>

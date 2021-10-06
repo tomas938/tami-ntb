@@ -3,7 +3,11 @@
 		<nav class="navigation">
 			<div class="navigation__links">
 				<ul class="left">
-					<img id="logo-mobile" src="../assets/logo.png" alt="tami-logo" />
+					<img
+						id="logo-mobile"
+						src="../assets/Home-page/logo.png"
+						alt="tami-logo"
+					/>
 
 					<li>
 						<router-link to="/">domov</router-link>
@@ -35,7 +39,7 @@
 						<router-link class="last" to="/">kontaktujte nás</router-link>
 					</li>
 					<div class="lang">
-						<img src="../assets/worldwide.png" alt="world" />
+						<img src="../assets/Home-page/worldwide.png" alt="world" />
 						<span>SK</span>
 					</div>
 					<div class="hamburger" @click="toggleMobileNav" v-show="mobile">
@@ -99,10 +103,10 @@
 					:class="{ active: expandProducts }"
 					>Naše produkty</ExpandButton
 				>
-				<img id="logo" src="../assets/logo.png" alt="tami-logo" />
+				<img id="logo" src="../assets/Home-page/logo.png" alt="tami-logo" />
 				<div class="about">
-					<img src="../assets/eu.png" alt="europe union" />
-					<img src="../assets/flower.png" alt="flower" />
+					<img src="../assets/Home-page/eu.png" alt="europe union" />
+					<img src="../assets/Home-page/flower.png" alt="flower" />
 					<div class="eshop">
 						<svg
 							height="512pt"
