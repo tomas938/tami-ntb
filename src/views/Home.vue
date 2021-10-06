@@ -492,8 +492,8 @@ export default {
 	}
 }
 .vueperslides__arrow svg {
-	width: 2.7em;
-	background: white;
+	background-color: white;
 	box-shadow: 5px 5px 15px 5px #cdcdcd;
+	fill: rgb(14, 13, 13);
 }
 </style>
