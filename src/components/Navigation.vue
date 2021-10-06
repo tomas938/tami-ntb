@@ -35,6 +35,7 @@
 						<router-link class="last" to="/">kontaktujte nás</router-link>
 					</li>
 					<div class="lang">
+						<img src="../assets/worldwide.png" alt="world" />
 						<span>SK</span>
 					</div>
 					<div class="hamburger" @click="toggleMobileNav" v-show="mobile">
@@ -225,6 +226,7 @@ export default {
 		}
 		.right {
 			display: flex;
+			align-items: center;
 		}
 		// THIS SHOULD BE FIXED !!!  LAST:CHILD NOT WORKING !!!//
 		.last::after {
@@ -257,6 +259,7 @@ export default {
 			display: flex;
 			align-items: center;
 			gap: 2.5rem;
+			background-color: white;
 			img {
 				@media only screen and (max-width: 900px) {
 					display: none;
@@ -371,6 +374,17 @@ export default {
 	transition: clip-path 0.5s linear;
 }
 .lang {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	span {
+		color: #37374f;
+		font-weight: bold;
+	}
+	img {
+		width: 2rem;
+		height: 2rem;
+	}
 	@media only screen and (max-width: 900px) {
 		display: none;
 	}

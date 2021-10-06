@@ -93,7 +93,7 @@
 				:key="index"
 				:title="slide.title"
 				:image="slide.image"
-			/>
+			></vueper-slide>
 		</vueper-slides>
 		<Expand-button class="category">Všetky kategórie</Expand-button>
 	</section>
@@ -247,40 +247,36 @@ export default {
 			],
 			slides: [
 				{
-					title: "El Teide Volcano, Spain",
-					content: "Photo by Max Rive",
-					// You can also provide a URL for the image.
+					title: "Mlieko",
 					image: require("../assets/small-carousel/img-1.png"),
 				},
 				{
-					title: "El Teide Volcano, Spain",
-					content: "Photo by Max Rive",
-					// You can also provide a URL for the image.
+					title: "smotana",
 					image: require("../assets/small-carousel/img-2.png"),
 				},
 				{
-					title: "El Teide Volcano, Spain",
-					content: "Photo by Max Rive",
-					// You can also provide a URL for the image.
+					title: "kyslomliečne výrobky",
 					image: require("../assets/small-carousel/img-3.png"),
 				},
 				{
-					title: "El Teide Volcano, Spain",
-					content: "Photo by Max Rive",
-					// You can also provide a URL for the image.
+					title: "Cheese",
 					image: require("../assets/small-carousel/img-4.png"),
 				},
 				{
-					title: "El Teide Volcano, Spain",
-					content: "Photo by Max Rive",
-					// You can also provide a URL for the image.
+					title: "Mlieko",
 					image: require("../assets/small-carousel/img-1.png"),
 				},
 				{
-					title: "El Teide Volcano, Spain",
-					content: "Photo by Max Rive",
-					// You can also provide a URL for the image.
+					title: "smotana",
 					image: require("../assets/small-carousel/img-2.png"),
+				},
+				{
+					title: "kyslomliečne výrobky",
+					image: require("../assets/small-carousel/img-3.png"),
+				},
+				{
+					title: "Cheese",
+					image: require("../assets/small-carousel/img-4.png"),
 				},
 			],
 		};
@@ -456,11 +452,19 @@ export default {
 		padding: 8rem 3rem;
 	}
 }
+.category {
+	margin: auto;
+	margin-top: 6rem;
+}
+
+// Slider library //
 .vueperslide {
 	background-color: var(--news-bg);
 	position: relative;
 	background-repeat: no-repeat;
 	background-size: auto;
+	transition: background-color 0.3s ease-in-out;
+
 	&::before {
 		position: absolute;
 		content: "";
@@ -472,9 +476,14 @@ export default {
 	}
 	&:hover {
 		background-color: white;
+		transition: background-color 0.3s ease-in-out;
+		&::before {
+			display: none;
+		}
 	}
 	&__title {
-		font-size: 1rem;
+		font-size: 2rem;
+		text-transform: uppercase;
 		position: absolute;
 		bottom: -5%;
 		color: var(--dark-blue);
@@ -482,8 +491,9 @@ export default {
 		margin-bottom: 3rem;
 	}
 }
-.category {
-	margin: auto;
-	margin-top: 6rem;
+.vueperslides__arrow svg {
+	width: 2.7em;
+	background: white;
+	box-shadow: 5px 5px 15px 5px #cdcdcd;
 }
 </style>

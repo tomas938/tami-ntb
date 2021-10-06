@@ -56,6 +56,7 @@ export default {};
 	gap: 1.3rem;
 	cursor: pointer;
 	transition: 0.2s background-color ease-in-out;
+	font-family: var(--sofia);
 	&:hover {
 		background-color: rgb(9, 41, 90);
 		transition: 0.2s background-color ease-in-out;
