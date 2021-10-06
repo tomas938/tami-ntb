@@ -60,7 +60,7 @@ body {
 	font-size: 1.6rem;
 	font-family: var(--sofia);
 	overflow-x: hidden;
-}</style>
+}
 .noscroll {
 	overflow: hidden;
 }
