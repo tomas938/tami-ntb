@@ -3,7 +3,13 @@
 </template>
 
 <style lang="scss">
-@import url("http://fonts.cdnfonts.com/css/sofia-pro");
+/** Poppins 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/** Poppins 
+*/
+/* should be sofia */
+// @import url("http://fonts.cdnfonts.com/css/sofia-pro");
 @import url("http://fonts.cdnfonts.com/css/myriad-pro");
 
 //** */ Should be fixed i coudl't find victor script font for free :/ **//
@@ -39,7 +45,7 @@ li {
 	--mobile-hover-color: #add8e6;
 	// Fonts //
 
-	--sofia: "Sofia Pro", sans-serif;
+	--sofia: "Poppins", sans-serif;
 	--myriad-pro: "Myriad Pro", sans-serif;
 
 	//* CHANGE FONT FOR HERO HEADING *//
