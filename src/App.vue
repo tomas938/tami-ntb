@@ -62,7 +62,7 @@ body {
 	overflow-x: hidden;
 }
 #app {
-	overflow: hidden;
+	overflow-x: hidden;
 	-ms-scroll-chaining: none;
 	overscroll-behavior: none;
 	-webkit-perspective: 1px;
