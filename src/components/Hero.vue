@@ -48,7 +48,7 @@ export default {
 	}
 	&__content {
 		position: absolute;
-		top: 45%;
+		top: 55%;
 		left: 15%;
 		transform: translateY(-50%);
 	}
