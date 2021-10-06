@@ -46,6 +46,7 @@ li {
 
 	--hero-heading: "Ephesis", cursive;
 }
+
 html {
 	font-size: 62.5%;
 	@media only screen and (max-width: 1300px) {
@@ -59,6 +60,13 @@ body {
 	font-size: 1.6rem;
 	font-family: var(--sofia);
 	overflow-x: hidden;
+}
+#app {
+	overflow: hidden;
+	-ms-scroll-chaining: none;
+	overscroll-behavior: none;
+	-webkit-perspective: 1px;
+	perspective: 1px;
 }
 .noscroll {
 	overflow: hidden;

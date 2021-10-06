@@ -259,7 +259,7 @@ export default {
 					image: require("../assets/small-carousel/img-3.png"),
 				},
 				{
-					title: "Cheese",
+					title: "Syry",
 					image: require("../assets/small-carousel/img-4.png"),
 				},
 				{
@@ -492,6 +492,7 @@ export default {
 	}
 }
 .vueperslides__arrow svg {
+	width: 2.7em;
 	background-color: white;
 	box-shadow: 5px 5px 15px 5px #cdcdcd;
 	fill: rgb(14, 13, 13);
