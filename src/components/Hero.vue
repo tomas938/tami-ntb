@@ -1,6 +1,9 @@
 <template>
 	<div class="hero">
-		<img :src="require(`../assets/Hero/bg-${currentSlide}.png`)" alt="hero" />
+		<img
+			:src="require(`../assets/Hero/${slides[currentSlide - 1]}.png`)"
+			alt="hero"
+		/>
 		<div class="hero__content">
 			<h1>Mliečna <br />chuť Tatier</h1>
 			<span>v novom dizajne</span>
@@ -21,7 +24,7 @@ export default {
 	data() {
 		return {
 			currentSlide: 1,
-			slides: ["bg-1", "bg-2", "bg-3", "bg-4"],
+			slides: ["bg-1", "bg-2", "bg-3"],
 		};
 	},
 	methods: {
@@ -37,6 +40,7 @@ export default {
 	background-color: var(--news-bg);
 	position: relative;
 	img {
+		transition: all 0.3s ease-in-out;
 		height: 83vh;
 		object-fit: cover;
 		@media only screen and (max-width: 900px) {
