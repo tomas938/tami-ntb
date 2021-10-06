@@ -3,8 +3,8 @@
 </template>
 
 <style lang="scss">
-@import url("http://fonts.cdnfonts.com/css/sofia-pro");
-@import url("http://fonts.cdnfonts.com/css/myriad-pro");
+@import url("https://fonts.cdnfonts.com/css/sofia-pro");
+@import url("https://fonts.cdnfonts.com/css/myriad-pro");
 //** */ Should be fixed i coudl't find victor script font for free :/ **//
 @import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
 //** */ Should be fixed i coudl't find victor script font for free :/ **//
