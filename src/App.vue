@@ -61,6 +61,13 @@ body {
 	font-family: var(--sofia);
 	overflow-x: hidden;
 }
+#app {
+	overflow: hidden;
+	-ms-scroll-chaining: none;
+	overscroll-behavior: none;
+	-webkit-perspective: 1px;
+	perspective: 1px;
+}
 .noscroll {
 	overflow: hidden;
 }
