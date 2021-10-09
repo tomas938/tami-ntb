@@ -470,7 +470,6 @@ export default {
 	margin: auto;
 	margin-top: 6rem;
 }
-
 // Slider library //
 .vueperslide {
 	background-color: var(--news-bg);
@@ -478,7 +477,6 @@ export default {
 	background-repeat: no-repeat;
 	background-size: auto;
 	transition: background-color 0.3s ease-in-out;
-
 	&::before {
 		position: absolute;
 		content: "";
@@ -505,6 +503,7 @@ export default {
 		margin-bottom: 3rem;
 	}
 }
+// Arrows //
 .vueperslides__arrows {
 	color: black;
 }
@@ -513,5 +512,83 @@ export default {
 	padding: 3rem;
 	box-shadow: 5px 5px 15px 5px #cdcdcd;
 	background: #fcf7f7;
+}
+// Bullets //
+.vueperslides__bullet .default {
+	background-color: transparent;
+	border: 2px solid var(--dark-blue);
+	box-shadow: none;
+	transition: 0.3s;
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.vueperslides__bullet--active .default {
+	background-color: var(--dark-blue);
+	transform: scale(0.7);
+	&::before {
+		content: "";
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		bottom: -15px;
+		left: -15px;
+		border-radius: 50%;
+		border: 3px solid #cfd8ea;
+	}
+}
+.vueperslides__bullet span {
+	display: block;
+	color: #fff;
+	font-size: 10px;
+	opacity: 0.8;
+}
+.vueperslides__bullets {
+	bottom: 5rem;
+	@media only screen and (max-width: 900px) {
+		bottom: 0rem;
+	}
+}
+
+// HERO Carousel //
+
+.hero {
+	.vueperslide {
+		background-size: cover;
+		&::before {
+			display: none;
+		}
+		&__title {
+			position: relative;
+			text-align: left;
+			line-height: 15rem;
+			text-transform: none;
+			font-size: 17rem;
+			font-family: var(--hero-heading);
+			font-weight: 600;
+			color: white;
+			text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+			margin-bottom: 0;
+			bottom: 0%;
+			@media only screen and (max-width: 900px) {
+				font-size: 8rem;
+				line-height: 8rem;
+			}
+		}
+		&__content {
+			color: var(--dark-blue);
+			font-weight: bold;
+			font-size: 4.8rem;
+			@media only screen and (max-width: 800px) {
+				font-size: 2.8rem;
+			}
+		}
+	}
+	.vueperslide__content-wrapper:not(.vueperslide__content-wrapper--outside-top):not(.vueperslide__content-wrapper--outside-bottom) {
+		display: flex;
+		align-items: flex-start;
+		position: absolute;
+		left: 25%;
+		transform: translateX(-25%);
+	}
 }
 </style>

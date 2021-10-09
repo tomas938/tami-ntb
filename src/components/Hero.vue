@@ -1,126 +1,54 @@
 <template>
 	<div class="hero">
-		<img
-			:src="require(`../assets/Hero/${slides[currentSlide - 1]}.png`)"
-			alt="hero"
-		/>
-		<div class="hero__content">
-			<h1>Mliečna <br />chuť Tatier</h1>
-			<span>v novom dizajne</span>
-		</div>
-		<div class="pagination">
-			<span
-				@click="goToSlide(index)"
-				v-for="(slide, index) in slides"
-				:key="index"
-				:class="{ active: index + 1 === currentSlide }"
-			></span>
-		</div>
+		<vueper-slides
+			:touchable="false"
+			:autoplay="true"
+			:arrows="false"
+			fixed-height="85vh"
+			class="no-hover"
+			:breakpoints="breakpoints"
+		>
+			<vueper-slide
+				v-for="slide in slides"
+				:key="slide"
+				:image="slide.image"
+				:title="slide.title"
+				:content="slide.content"
+			/>
+		</vueper-slides>
 	</div>
 </template>
 
 <script>
+import { VueperSlides, VueperSlide } from "vueperslides";
+
 export default {
+	components: {
+		VueperSlides,
+		VueperSlide,
+	},
 	data() {
 		return {
-			currentSlide: 1,
-			slides: ["bg-1", "bg-2", "bg-3"],
+			breakpoints: {
+				900: {
+					visibleSlides: "1",
+					fixedHeight: "45vh",
+				},
+			},
+			slides: [
+				{
+					image: require("../assets/Hero/bg-1.png"),
+					title: "Mliečna </br> chuť Tatier",
+					content: "v novom dizajne",
+				},
+				{
+					image: require("../assets/Hero/bg-2.png"),
+					title: "Mliečna </br> chuť Tatier",
+					content: "ttootwooaodoaoaodaooad odoasdoaoo odao",
+				},
+				{ image: require("../assets/Hero/bg-3.png") },
+			],
 		};
-	},
-	methods: {
-		goToSlide(index) {
-			this.currentSlide = index + 1;
-		},
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-.hero {
-	background-color: var(--news-bg);
-	position: relative;
-	img {
-		transition: all 0.3s ease-in-out;
-		height: 83vh;
-		object-fit: cover;
-		@media only screen and (max-width: 900px) {
-			height: 44rem;
-		}
-		@media only screen and (max-width: 550px) {
-			height: 34rem;
-		}
-	}
-	&__content {
-		position: absolute;
-		top: 50%;
-		left: 15%;
-		transform: translateY(-50%);
-		@media only screen and (max-width: 1300px) {
-			top: 55%;
-			left: 10%;
-		}
-		@media only screen and (max-width: 500px) {
-			top: 50%;
-			left: 7%;
-		}
-	}
-	h1 {
-		line-height: 15rem;
-		font-size: 17rem;
-		font-family: var(--hero-heading);
-		color: white;
-		text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
-		@media only screen and (max-width: 900px) {
-			font-size: 8rem;
-			line-height: 8rem;
-		}
-	}
-	span {
-		color: var(--dark-blue);
-		font-weight: bold;
-		font-size: 4.8rem;
-		@media only screen and (max-width: 800px) {
-			font-size: 2.8rem;
-		}
-	}
-	img {
-		width: 100%;
-	}
-	.pagination {
-		position: absolute;
-		bottom: 7rem;
-		@media only screen and (max-width: 1000px) {
-			bottom: 4rem;
-		}
-		width: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		gap: 1.6rem;
-		justify-content: center;
-		align-items: center;
-		span {
-			cursor: pointer;
-			width: 0.9rem;
-			height: 0.9rem;
-			border-radius: 50%;
-			background-color: transparent;
-			border: 2px solid var(--dark-blue);
-		}
-		.active {
-			background-color: var(--dark-blue);
-			transform: scale(0.7);
-			&::before {
-				content: "";
-				position: absolute;
-				top: -15px;
-				right: -15px;
-				bottom: -15px;
-				left: -15px;
-				border-radius: 50%;
-				border: 4px solid #cfd8ea;
-			}
-		}
-	}
-}
-</style>
